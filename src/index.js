@@ -10,7 +10,7 @@ import {
     KeyboardDatePicker,
     KeyboardDateTimePicker,
     KeyboardTimePicker,
-    MuiPickersUtilsProvider,
+    MuiPickersUtilsProvider
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
@@ -128,7 +128,7 @@ const Picker = ({
         id,
         input,
         isRequired,
-        meta: {error, touched},
+        meta: {error, touched}
     } = useInput({
         format,
         onBlur,
@@ -139,7 +139,7 @@ const Picker = ({
         source,
         validate,
         /* type: 'datetime-local', */
-        ...rest,
+        ...rest
     });
 
     const handleChange = useCallback(value => {
@@ -157,7 +157,7 @@ const Picker = ({
               isRequired={isRequired}
             />}
             InputLabelProps={{
-                shrink: true,
+                shrink: true
             }}
             variant={pickerVariant}
             inputVariant={variant}
@@ -177,6 +177,7 @@ const Picker = ({
             value={input.value ? new Date(input.value) : null}
             onChange={date => handleChange(date)}
             onBlur={() => input.onBlur(input.value ? (stringFormat === 'ISO' ? new Date(input.value).toISOString() : new Date(input.value).toString()) : null)}
+            onFocus={input.onFocus}
           />
       </MuiPickersUtilsProvider>
     );
@@ -197,7 +198,7 @@ Picker.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -213,8 +214,8 @@ Picker.defaultProps = {
     className: '',
     providerOptions: {
         utils: DateFnsUtils,
-        locale: undefined,
-    },
+        locale: undefined
+    }
 };
 
 const DateInput = props => <Picker PickerComponent={DatePicker} {...props} />;
@@ -238,7 +239,7 @@ DateInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -257,7 +258,7 @@ TimeInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -276,7 +277,7 @@ DateTimeInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -295,7 +296,7 @@ KeyboardDateInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -314,7 +315,7 @@ KeyboardDateTimeInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
@@ -333,7 +334,7 @@ KeyboardTimeInput.propTypes = {
     className: PropTypes.string,
     providerOptions: PropTypes.shape({
         utils: PropTypes.func,
-        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        locale: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
     }),
     stringFormat: PropTypes.string
 };
