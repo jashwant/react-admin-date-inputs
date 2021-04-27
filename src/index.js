@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {useInput, useTranslate, FieldTitle} from 'ra-core';
-import {InputHelperText} from 'ra-ui-materialui';
+import {useInput, useTranslate, FieldTitle, InputHelperText} from 'react-admin';
 
 import {
     DatePicker,

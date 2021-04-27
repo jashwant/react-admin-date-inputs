@@ -1,6 +1,6 @@
 {
     "name": "react-admin-date-inputs",
-    "version": "3.0.29",
+    "version": "3.0.30",
     "description": "react-admin-date-inputs",
     "main": "lib/index.js",
     "author": "vascofg",
@@ -31,8 +31,7 @@
         "eslint-plugin-import": "^2.19.1",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-react": "^7.17.0",
-        "ra-core": "^3.14.4",
-        "ra-ui-materialui": "^3.14.4"
+        "react-admin": "^3.14.5"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
